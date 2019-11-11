@@ -1,0 +1,105 @@
+&{
+  .statusHolder{
+	background-color: #E8E8E8;
+	padding:15px 0;
+	height: 100%;
+	width: 100%;
+	margin-left: 15px;
+	margin-bottom: 10px;
+	.container{
+	  //	display: inline-block;
+//	  padding: 0;
+	  padding: 0;
+	  margin: 0 auto;
+	  width: 100%;
+
+	  table{
+		width: 100%;
+
+		tr{
+
+		  td{
+			vertical-align: middle;
+			span{
+//			  @include font-family('ProximaNova-Bold', 'normal', 110%);
+			  font-size: 100%;
+			  font-weight: bold;
+			  padding: 2px 0;
+			}
+
+			&:nth-child(1){
+			  width: 88%;
+			  //			span{
+			  //			  display: block;
+			  span{
+				margin: 0 10px;
+				font-size: 100%;
+			  }
+
+			  a{
+				margin: 0 10px;
+				font-size: 100%;
+			  }
+			  //			}
+			}
+			&:nth-child(2){
+			  width: 12%;
+			  text-align: center;
+
+
+
+			  .toggleVisibility{
+//				@include font-family('ProximaNova-Light', 'normal', 90%);
+				color: black;
+				text-decoration: underline;
+				font-size: 100%;
+
+			  }
+			}
+		  }
+		}
+	  }
+	}
+  }
+
+  .backToIndex{
+	&.bottom{
+	  margin-left: 15px;
+	  font-size: 90%;
+	}
+  }
+}
+
+#registrationForm{
+  [data-role="phoneField"]{
+	input{
+	  width: 95%;
+	  display: inline-block;
+	}
+
+	span{
+	  &.numberControl{
+		width: 24px;
+		height: 24px;
+		display: inline-block;
+		cursor: pointer;
+		position: absolute;
+		right: 20px;
+		bottom: 5px;
+		//			  float: right;
+
+		&.numberAdd{
+		  background: url('../img/number-add.png');
+		}
+		&.numberRemove{
+		  background: url('../img/number-remove.png');
+		}
+		&.numberDisable{
+		  background: url('../img/number-disable.png');
+		  cursor: default;
+		}
+	  }
+	}
+  }
+}
+

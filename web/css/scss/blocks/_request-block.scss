@@ -1,0 +1,124 @@
+
+&{
+  margin-top:($smetawizardMessage-height + $formRow-padding-top);
+  background-color: #EDEDED;
+
+  .smetawizardMessage{
+
+	.container{
+	  text-align: center;
+	}
+	position: relative;
+	top: -($smetawizardMessage-height/2);
+
+	h2{
+	  height: $smetawizardMessage-height;
+	  display: inline-block;
+	  width: auto;
+	  margin: 0 auto;
+	  @include font-family('ProximaNova-Bold', 'normal', 150%);
+	  text-align: center;
+	  color: #ffffff;
+	  padding: 10px 25px;
+
+	}
+  }
+
+  display: inline-block;
+  width: 100%;
+  //	  border: 1px solid black;
+
+  h2{
+	background-color: #FF0029;
+	text-align: center;
+  }
+
+  .row{
+	margin:($formRow-padding-top+($smetawizardMessage-height/2)) 0 0 0;
+	width:100%;
+	.leftSide{
+	  padding-top:31px;
+	  width: 35%;
+	  float: left;
+	  display: block;
+
+	  p{
+		margin: 10px 0;
+		line-height: 1.2;
+		@include font-family('ProximaNova-Light', 'normal', 100%);
+		&:first-child{
+		  margin-bottom: 20px;
+		}
+	  }
+	}
+
+
+	.rightSide{
+	  width: 65%;
+	  float: right;
+	  display: block;
+
+	  .form-group{
+
+		.help-block{
+		  @include font-family('ProximaNova-Light', 'normal', 100%);
+		}
+		&.has-error{
+		  & > input, & > textarea{
+			border: 1px solid #a94442;
+		  }
+		}
+
+		&.has-success{
+		  & > input, & > textarea{
+			border: 1px solid #3c763d;
+		  }
+		}
+
+		margin: 10px 0;
+
+		label{
+		  @include font-family('ProximaNova-Light', 'normal', 100%);
+
+		  margin-bottom:3px;
+
+		}
+
+		& > input, & > textarea{
+		  border: 1px solid $search-block-bg-color;
+		  @include border-radius(10px);
+		  @include font-family('ProximaNova-Light', 'normal', 100%);
+		}
+
+		&.field-request-request_agreement{
+		  input[type="checkbox"]{
+			position: relative;
+			top:3px;
+
+		  }
+		  label{
+			margin-bottom: 0;
+		  }
+		}
+	  }
+
+	  .formRow{
+		&.submitRow{
+		  margin: ($smetawizardMessage-height + $formRow-padding-top) 0;
+		  text-align: center;
+		  button{
+			padding: 3.5px 20px;
+			@include font-family('ProximaNova-Light', 'normal', 120%);
+
+		  }
+		}
+	  }
+
+
+
+
+	}
+  }
+
+}
+

@@ -1,0 +1,248 @@
+header{
+  margin:0;
+  text-align: center;
+  width: 100%;
+  background-color: #31383F;
+  font-size: 120%;
+
+  padding: 5px 0;
+  line-height: 30px;
+
+  	img{
+	  width:40px;
+	  height: 34px;
+	}
+  span{
+	color: #ffffff;
+	position: relative;
+//	top:-7px;
+  }
+}
+.formBlock{
+  padding-top:15px ;
+  width: 400px;
+  margin:0px auto;
+ // margin-top: 33px;
+//  position: absolute;
+//  top: 50%;
+//  left: 50%;
+//  transform: translate(-50%, -70%);
+//  -ms-transform: translate(-50%, -70%);
+  //display: block;
+//  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+  background-color: $select2-items-color;
+  border-radius:5px;
+  color:#ffffff;
+  margin-bottom: 35px;
+
+  h1{
+    display: inherit;
+	margin-top: 0;
+	text-align: center;
+
+	@include font-family('ProximaNova-Light',normal, 130%);
+
+  }
+  #login-form{
+	padding:0 10% 10px;
+	.form-group{
+	  margin:10px 0;
+	  height: 60px;
+
+	  input{
+		border: 2px solid #ffffff;
+	  }
+
+	  &.has-error{
+		input{
+		  border: 2px solid #000000;
+		}
+	  }
+
+	  &.has-success{
+		input{
+		  border: 2px solid #ffffff;
+		}
+	  }
+
+	  .inputBlock{
+
+//		@include chromeRemoveAutofillColor();
+
+		input{
+
+		  @include border-radius(8px);
+		  background-color: #ffffff;
+		  transition: none;
+		  box-shadow: none;
+
+		}
+	  }
+
+	  &.field-auth-login, &.field-auth-password{
+
+		div.topInfo{
+		  label{
+			color: #ffffff;
+		  }
+		}
+
+		.error-block{
+      text-align: right;
+      position: relative;
+      top:-25px;
+		  .help-block{
+			color: #000000;
+			@include font-family('ProximaNova-Bold',normal, 90%);
+			text-align: right;
+			position: relative;
+			//top:-13px;
+
+		  }
+		}
+
+
+
+	  }
+
+	  &.field-auth-error{
+//		height: 20px;
+		position: relative;
+		top:-15px;
+		div.topInfo{
+		  height: 0;
+		  label{
+			display: none;
+		  }
+		}
+
+		div.inputBlock{
+		  display: none;
+		}
+
+
+	  }
+
+	  &.field-auth-rememberme{
+		height: 40px;
+		padding: 0;
+		display: inline-block;
+		width: 40%;
+		float:left;
+
+		& > div{
+		  padding: 0;
+		  display: inline-block;
+
+
+		  input[type="checkbox"]{
+			width: inherit;
+		  }
+		}
+
+	  }
+
+	  &.field-auth-error{
+		height: 20px;
+		padding: 0;
+		display: block;
+		width: 100%;
+		top:0;
+		.error-block{
+		  color: #000000;
+		  //		  		width: 100%;
+		  display: block;
+		  //		  float: right;
+		  @include font-family('ProximaNova-Bold',normal, 100%);
+
+//		  position: absolute;
+
+//		  right:0;
+
+		  text-align: center;
+
+
+		  height: 30px;
+		  p{
+			display: inline;
+			font-size: 90%;
+			color: #000000;
+		  }
+		}
+	  }
+
+	  .topInfo{
+		text-align: left;
+
+		position: relative;
+		width: 100%;
+		height: 20px;
+		top:0;
+		display: block;
+		label{
+		  @include font-family('ProximaNova-Light',normal, 100%);
+		  padding-top: 0;
+		  font-size: 100%;
+		  text-align: left;
+
+		}
+
+	  }
+
+		input{
+		  width: 100%;
+
+		}
+
+	}
+
+	.submitRow{
+	  margin-top:5px;
+		width: 100%;
+	  display: inline-block;
+//		text-align: right;
+	  .restorePassDiv{
+		display: block;
+		height: 100%;
+		float: left;
+		width: 50%;
+		text-align: left;
+		vertical-align: middle;
+
+		.restorePassA{
+		  text-decoration: underline;
+		  position: relative;
+		  top:7px;
+		  color: #ffffff;
+		  @include font-family('ProximaNova-Light',normal, 90%);
+
+
+		}
+	  }
+
+	  .buttonDiv{
+		display: block;
+		float: right;
+		width: 50%;
+		text-align: right;
+
+		button{
+		  background-color: #008F41;
+		  border-color: #008F41;
+		  @include font-family('ProximaNova-Light',normal, 140%);
+			padding: 1px 12px;
+
+		  width: 150px;
+
+		}
+	  }
+
+
+
+	}
+  }
+}
+
+
+

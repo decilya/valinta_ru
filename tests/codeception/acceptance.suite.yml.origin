@@ -1,0 +1,62 @@
+# Codeception Test Suite Configuration
+
+# suite for acceptance tests.
+# perform tests in browser using the Selenium-like tools.
+# powered by Mink (http://mink.behat.org).
+# (tip: that's what your customer will see).
+# (tip: test your ajax and javascript by one of Mink drivers).
+
+# RUN `build` COMMAND AFTER ADDING/REMOVING MODULES.
+
+class_name: AcceptanceTester
+modules:
+    enabled:
+#        - PhpBrowser
+# you can use WebDriver instead of PhpBrowser to test javascript and ajax.
+# This will require you to install selenium. See http://codeception.com/docs/04-AcceptanceTests#Selenium
+# "restart" option is used by the WebDriver to start each time per test-file new session and cookies,
+# it is useful if you want to login in your app in each test.
+        - WebDriver
+        - Db
+        - DbHelper
+
+    config:
+        Db:
+            dsn: 'mysql:host=192.168.11.218;dbname=cda_smetchik_test'
+            user: 'cda'
+            password: '1qwe2qaz'
+            dump: '_data/smetchik_test_db_myisam_60people.sql'
+            populate: true
+            cleanup: true
+            reconnect: true
+
+#        PhpBrowser:
+# PLEASE ADJUST IT TO THE ACTUAL ENTRY POINT WITHOUT PATH INFO
+
+        WebDriver:
+            url: http://cda.yii2-smet4ik.dsite:81/
+            browser: chrome
+            host: 127.0.0.1
+            port: 4444
+            restart: true
+            window_size: maximize
+
+
+env:
+    chrome:
+         modules:
+            config:
+                WebDriver:
+                    browser: 'chrome'
+
+    ie:
+         modules:
+            config:
+                WebDriver:
+                    browser: 'internet explorer'
+
+    firefox:
+         modules:
+            config:
+                WebDriver:
+                    browser: 'firefox'

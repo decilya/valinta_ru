@@ -1,0 +1,194 @@
+&{
+  font-size: 14px !important;
+	.searchBlock{
+	  position:relative;
+	  height:40px;
+
+		.searchIdBlock{
+			position: absolute;
+		  	left:10px;
+			top:10px;
+		  	width:120px;
+
+		  input{
+			width:50px;
+		  }
+		}
+		.searchTextBlock{
+		  position: absolute;
+		  left:150px;
+		  top:10px;
+		  width:300px;
+		  input{
+			width:250px;
+		  }
+		}
+
+	  .searchUserStatusBlock{
+		position: absolute;
+		left:500px;
+		top:10px;
+		width: 200px;
+		select{
+		  width:150px;
+		}
+	  }
+	}
+
+  	.resultsBlock{
+
+	  .itemBlock{
+
+		.row{
+			display: block;
+		  	clear: both;
+		  	margin: 0;
+
+		  &.firstRow{
+			position: relative;
+			height:40px;
+
+			.itemId{
+			  font-weight: bold;
+			  position: absolute;
+			  left:10px;
+			  top:10px;
+			  width:250px;
+
+			  &.status_1{ color: #0000aa;}
+			  &.status_2{	color: #008000;}
+			  &.status_3{	color: #ff0000;}
+			}
+
+			.itemChanged{
+			  position: absolute;
+			  left:250px;
+			  top:10px;
+			  width:200px;
+			}
+
+			.itemStatusMsg{
+			  position: absolute;
+			  left:450px;
+			  top:10px;
+			  width:200px;
+
+			  &.visible{
+				color: #008000;
+			  }
+			  &.notVisible{
+				color: #ff0000;
+			  }
+			}
+
+			.itemStatLink{
+			  position: absolute;
+			  right:150px;
+			  top:10px;
+			}
+
+			.itemEditLink{
+			  position: absolute;
+			  right:10px;
+			  top:10px;
+			}
+
+
+		  }
+		  &.secondRow{
+			position: relative;
+			height:40px;
+
+			.itemFio{
+			  position: absolute;
+			  left:10px;
+//			  top:10px;
+			  width:350px;
+			}
+
+			.itemPhone{
+			  position: absolute;
+			  left:310px;
+//			  top:10px;
+			  width:190px;
+			}
+
+			.itemEmail{
+			  position: absolute;
+			  left:540px;
+
+//			  top:10px;
+			  width:300px;
+			}
+			.itemCity{
+			  position: absolute;
+			  left:850px;
+//			  top:10px;
+			  width:350px;
+			}
+
+		  }
+		  &.thirdRow{
+			.itemProfessions{
+				padding-left:10px;
+			}
+		  }
+		  &.fourthRow{
+			.itemNormBases{
+			  padding-left:10px;
+			}
+		  }
+		  &.fifthRow{
+			.itemSmetaDocs{
+			  padding-left:10px;
+			}
+		  }
+		  &.sixthRow{
+			 position: relative;
+//			display: inline-block;
+
+			.itemExperience{
+			  position: relative;
+			  left:10px;
+//			  top:10px;
+			  width:900px;
+			}
+
+			.itemIpapId{
+			  position: relative;
+			  left:10px;
+//			  top:10px;
+			  width:900px;
+			}
+
+			.itemPrice{
+			  position: relative;
+			  left:10px;
+//			  top:10px;
+			  width:900px;
+			}
+
+			.itemAcceptLink{
+			  position: absolute;
+			  right:150px;
+			  bottom:10px;
+			}
+
+			.itemRejectLink{
+			  position: absolute;
+			  right:10px;
+			  bottom:10px;
+			}
+
+		  }
+
+
+
+
+		}
+
+	  }
+
+	}
+
+}

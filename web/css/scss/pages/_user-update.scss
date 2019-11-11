@@ -1,0 +1,271 @@
+
+.update-info{
+  position: relative;
+  top: 20px;
+  display: inline-block;
+  font-family: "ProximaNova-Light", sans-serif !important;
+  font-size: 16px;
+}
+
+.update-info__star{
+  position: absolute;
+  top: -12px;
+  left: -11px;
+  font-size: 24px;
+  color: #63B5CB;
+}
+
+.update-user-btn{
+  position: relative;
+  display: inline-block;
+}
+
+.update-btn__star{
+  font-family: "ProximaNova-Light", sans-serif !important;
+  position: absolute;
+  top: -13px;
+  left: 138px;
+  font-size: 24px;
+  color: #63B5CB;
+}
+
+.titleHolder{
+  background-color: $select2-items-color;
+  h2{
+	@include font-family('ProximaNova-Bold', 'normal', 150%);
+	text-align: center;
+	color: #ffffff;
+	padding: 25px 0;
+
+  }
+}
+
+.statusHolder{
+  background-color: #E8E8E8;
+  padding:15px 0;
+  height: 100%;
+
+  .container{
+//	display: inline-block;
+
+	table{
+	  width: 100%;
+
+	  tr{
+
+		td{
+		  vertical-align: middle;
+		  span{
+			@include font-family('ProximaNova-Bold', 'normal', 110%);
+			padding: 2px 0;
+		  }
+
+		  &:nth-child(1){
+			width: 80%;
+//			span{
+//			  display: block;
+//			}
+		  }
+		  &:nth-child(2){
+			width: 20%;
+			text-align: right;
+
+			.toggleVisibility{
+			  @include font-family('ProximaNova-Light', 'normal', 100%);
+			  color: black;
+			  text-decoration: underline;
+
+			}
+		  }
+		}
+	  }
+	}
+  }
+}
+
+.messageBlock{
+  margin-top: 10px;
+  .alert{
+	padding:20px 10px;
+	@include border-radius(10px);
+	@include font-family('ProximaNova-Light', 'normal', 100%);
+
+  }
+
+}
+
+.user-form{
+
+  h2{
+	text-align: center;
+	color: $select2-items-color;
+	@include font-family('ProximaNova-Bold', 'normal', 110%);
+	margin: 20px 0;
+  }
+
+  .form-group{
+
+	.help-block{
+	  @include font-family('ProximaNova-Light', 'normal', 100%);
+	}
+
+	&.has-error{
+	  & > input, & > textarea{
+		border: 1px solid #a94442;
+	  }
+
+	  .select2-container{
+		.select2-selection--multiple{
+		  border: 1px solid #a94442;
+		}
+	  }
+	}
+
+	&.has-success{
+	  & > input, & > textarea{
+		border: 1px solid #3c763d;
+	  }
+
+	  .select2-container{
+		.select2-selection--multiple{
+		  border: 1px solid #3c763d;
+		}
+
+		.select2-selection--single{
+		  border: 1px solid #3c763d;
+		}
+	  }
+	}
+	margin: 10px 0;
+
+	label{
+	  @include font-family('ProximaNova-Light', 'normal', 100%);
+
+	  margin-bottom: 3px;
+
+	  & + a.checkIpap{
+		@include font-family('ProximaNova-Light', 'normal', 100%);
+		color: $search-block-bg-color;
+
+		&:hover{
+		  text-decoration: none;
+		}
+	  }
+	}
+
+	& > input, & > textarea{
+	  border: 1px solid $search-block-bg-color;
+	  @include border-radius(10px);
+	  @include font-family('ProximaNova-Light', 'normal', 100%);
+	}
+
+
+	.select2-container{
+	  .select2-selection{
+		border: 1px solid $search-block-bg-color;
+		@include border-radius(10px);
+
+		&.select2-selection--single{
+		  height: $search-block-input-height;
+		  padding-left:10px;
+		  .select2-selection__rendered{
+			height: $search-block-input-height;
+			line-height: $search-block-input-height;
+			@include font-family('ProximaNova-Light', 'normal', 100%);
+
+			.select2-selection__placeholder{
+			  @include font-family('ProximaNova-Light', 'normal', 100%);
+			  color:#878080;
+			}
+
+
+		  }
+		}
+
+		&.select2-selection--multiple{
+		  @include font-family('ProximaNova-Light', 'normal', 100%);
+		  .select2-selection__choice{
+			margin:5px;
+			background-color: #E8E8E8;
+			color: #000000;
+			border: 1px solid #53505a;
+			.select2-selection__choice__remove{
+			  color: #000000;
+			}
+		  }
+		}
+	  }
+	}
+
+
+
+
+
+	&.field-user-phonemaskcity{
+	  display: none;
+	}
+
+	.select2.select2-container{
+	  width: 100% !important;
+	}
+
+
+	&.submitRow{
+	  text-align: center;
+	  margin: 20px 0;
+	  button{
+		padding: 3.5px 20px;
+		@include font-family('ProximaNova-Light', 'normal', 120%);
+
+
+	  }
+	}
+
+	textarea{
+	  resize: none;
+	  height: 80px;
+	}
+
+	&[data-role="phoneField"]{
+	  input{
+		width: 95%;
+		display: inline-block;
+	  }
+
+	  span{
+		&.numberControl{
+		  width: 24px;
+		  height: 24px;
+		  display: inline-block;
+		  cursor: pointer;
+		  position: absolute;
+		  right: 12px;
+		  bottom: 5px;
+		  //			  float: right;
+
+		  &.numberAdd{
+			background: url('../img/number-add.png');
+		  }
+		  &.numberRemove{
+			background: url('../img/number-remove.png');
+		  }
+		  &.numberDisable{
+			background: url('../img/number-disable.png');
+			cursor: default;
+		  }
+		}
+	  }
+	}
+  }
+
+}
+
+.requestBlock{
+
+  @import "../blocks/request-block";
+
+}
+
+
+
+

@@ -1,0 +1,256 @@
+header{
+  margin:0;
+  text-align: center;
+  width: 100%;
+  background-color: #31383F;
+  font-size: 120%;
+
+  padding: 5px 0;
+  line-height: 30px;
+
+  img{
+	width:40px;
+	height: 34px;
+  }
+  span{
+	color: #ffffff;
+	position: relative;
+	//	top:-7px;
+  }
+}
+
+.formBlock{
+  padding-top:15px;
+  width: 400px;
+  margin:40px auto;
+  margin-bottom: 80px;
+  //margin-top: 37px;
+//  margin:15% auto;
+//  display: block;
+//  position: absolute;
+//  top: 50%;
+//  left: 50%;
+//  transform: translate(-50%, -70%);
+//  -ms-transform: translate(-50%, -70%);
+//  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+  background-color: $select2-items-color;
+
+//  background-color: #000000;
+  border-radius:5px;
+  color:#ffffff;
+  h1{
+	margin-top: 0 !important;
+	@include font-family('ProximaNova-Light',normal, 130%);
+	text-align: center;
+
+	& + p{
+	  @include font-family('ProximaNova-Light',normal, 70%);
+	  text-align: center;
+	  padding: 5px 0;
+
+
+//	  -webkit-transform: perspective(1px) translate3d(0,0,0) !important;
+//	  transform: perspective(1px) translate3d(0,0,0) !important;
+//	  -webkit-transform-origin: 50% 60%;
+//	  backface-visibility: hidden;
+
+
+//	  &.animate{
+////		-webkit-filter: scale(0);
+//		backface-visibility: hidden;
+//		animation: tremor 1s ease-in-out 1;
+//	  }
+	}
+  }
+
+  #changePass-form{
+	padding:0 10% 5px;
+	.form-group{
+	  margin:0;
+	  height: 60px;
+
+	  input{
+		border: 2px solid #ffffff;
+		background-color: #ffffff;
+		transition: none;
+		box-shadow: none;
+		@include border-radius(8px);
+	  }
+
+	  &.has-error{
+		input{
+		  border: 2px solid #000000;
+		}
+	  }
+
+	  &.has-success{
+		input{
+		  border: 2px solid #ffffff;
+		}
+	  }
+
+	  .table{
+		display: table;
+
+		.help-block{
+		  display: table-cell;
+		 vertical-align: middle;
+			color: #000000;
+		}
+	  }
+
+	  .help-block{
+		margin: 0;
+		line-height: 15px;
+
+		//		  		width: 100%;
+		display: inline-block;
+		//		  float: right;
+
+		//		  position: absolute;
+		right:0;
+		width: 100%;
+		text-align: center;
+		@include font-family('ProximaNova-Bold',normal, 90%);
+		height: 25px;
+		vertical-align: middle;
+		p{
+		  display: inline;
+		  font-size: 90%;
+
+		}
+
+
+	  }
+
+
+	  &.field-auth-pass_change,&.field-auth-pass_change_repeat{
+		margin: 5px 0;
+		& > label.control-label{
+		  top: 0;
+		  margin-bottom: 0;
+		}
+	  }
+
+	  &.field-auth-token{
+		display: none;
+	  }
+
+
+	  .topInfo{
+		position: relative;
+		width: 100%;
+		height: 20px;
+		top:0;
+		display: block;
+		//		margin-bottom: 10px;
+		label{
+		  color: #ffffff;
+		  padding-top: 0;
+		  font-size: 100%;
+		  //		  display: block;
+		  //		  width: 100%;
+		  text-align: left;
+
+		}
+
+
+
+	  }
+
+
+	  input{
+		width: 100%;
+		@include font-family('ProximaNova-Light',normal, 100%);
+	  }
+
+
+	}
+
+	.restorePassDiv{
+	  width: 60%;
+	  float:right;
+	  text-align: right;
+	  .restorePassA{
+		text-decoration: underline;
+		position: relative;
+		top:2px;
+	  }
+	}
+
+	.submitRow{
+	  margin-top:0;
+	  display: block;
+	  text-align: center;
+	  width: 100%;
+	  margin-bottom: 10px;
+
+	  button, a.btn{
+		@include font-family('ProximaNova-Light',normal, 110%);
+		width: 190px;
+		padding: 3px 12px;
+
+
+	  }
+
+	  button{
+		background-color: #008F41 !important;
+		border-color: #008F41 !important;
+	  }
+	}
+
+  }
+
+
+  .message{
+	text-align: center;
+	@include font-family('ProximaNova-Light',normal, 120%);
+	margin: 30px 0;
+
+	& + .submitRow{
+	  margin-top: 0;
+	  text-align: center;
+	  padding-bottom: 15px;
+
+	  & > a{
+		@include font-family('ProximaNova-Light',normal, 120%);
+		width: 190px;
+		padding-top: 8px;
+		padding-bottom: 8px;
+	  }
+	}
+  }
+
+
+}
+
+@keyframes tremor {
+
+  //	25%{ transform: none;}
+  20%{ transform: rotate(10deg);}
+  30%{ transform: rotate(-10deg);}
+  40%{ transform: rotate(7deg);}
+  50%{ transform: rotate(-7deg);}
+  60%{ transform: rotate(4deg);}
+  70%{ transform: rotate(-4deg);}
+
+}
+
+
+//.form-group{
+//  &.has-error{
+//	.inputBlock{
+//	  #auth-login{
+//		//		background-color: #0000aa;
+//		//		&:hover{
+//		animation: tremor 1s ease-in-out 1;
+//		//		}
+//	  }
+//	}
+//  }
+//}
+
+
+
+

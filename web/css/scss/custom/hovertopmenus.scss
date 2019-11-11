@@ -1,0 +1,22 @@
+.current span a{
+  color: #1083AB !important;
+
+}
+//.current{
+//  color: #fff !important;
+//}
+
+.current2 a {
+  color: #1083AB !important;
+}
+
+.current2{
+  color: #fff !important;
+  background: #1083AB !important;
+  border-bottom: 3px solid #1083AB !important;
+  padding: 19px 23px;
+  display: inline-block;
+  //border-bottom: 3px solid #fff;
+  border-top-left-radius: 4px; /* Левый верхний уголок */
+  border-top-right-radius: 4px; /* Правый верхний уголок */
+}

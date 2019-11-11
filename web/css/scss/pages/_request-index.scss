@@ -1,0 +1,139 @@
+&{
+  font-size: 14px !important;
+  .searchBlock{
+	position:relative;
+	height:40px;
+
+	.searchIdBlock{
+	  position: absolute;
+	  left:10px;
+	  top:10px;
+	  width:120px;
+
+	  input{
+		width:50px;
+	  }
+	}
+	.searchTextBlock{
+	  position: absolute;
+	  left:150px;
+	  top:10px;
+	  width:300px;
+	  input{
+		width:250px;
+	  }
+	}
+
+
+	.searchStatusBlock{
+	  position: absolute;
+	  left:503px;
+	  top:10px;
+	  width: 200px;
+	  select{
+		width:150px;
+	  }
+	}
+  }
+
+  .resultsBlock{
+
+	.itemBlock{
+		position: relative;
+	  	height: 100px;
+	  	width:100%;
+
+	  .itemId{
+		position: absolute;
+		top:10px;
+		left:10px;
+	  }
+	  .itemDateCreated{
+		position: absolute;
+		top:10px;
+		left:170px;
+	  }
+	  .itemPhone{
+		position: absolute;
+		top:60px;
+		left:10px;
+	  }
+	  .itemEmail{
+		position: absolute;
+		top:60px;
+		left:410px;
+		width:300px;
+	  }
+	  .itemFio{
+		position: absolute;
+		top:10px;
+		left:410px;
+		width:300px;
+	  }
+
+	  .itemStatus{
+		position: absolute;
+		top:60px;
+		left:170px;
+
+
+		.changeRequestStatus{
+		  position: relative;
+		  left: 10px;
+		}
+	  }
+
+	  .itemStatusChangeLink{
+		position: absolute;
+		left: 280px;
+		top:58px;
+//		width:200px;
+	  }
+
+	  .itemComment{
+		position: absolute;
+		top:-10px;
+		left:775px;
+
+
+		textarea{
+		  width: 250px;
+		  height: 90px;
+		  resize: none;
+		  overflow-y: auto;
+		  &[disabled]{
+			cursor: default;
+		  }
+		}
+
+		button{
+		  &.requestCommentEdit{
+			position: absolute;
+			left: 260px;
+			top:20px;
+
+		  }
+		  &.requestCommentSave{
+			position: absolute;
+			left: 260px;
+			top:20px;
+
+		  }
+		  &.requestCommentCancel{
+			position: absolute;
+			left: 260px;
+			top:50px;
+
+		  }
+		}
+	  }
+
+	}
+
+  }
+
+
+
+}
+
+

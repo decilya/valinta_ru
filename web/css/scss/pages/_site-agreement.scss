@@ -1,0 +1,25 @@
+&{
+  .container{
+	padding: 10px;
+
+	  h1{
+		@include font-family('ProximaNova-Bold',normal, 180%);
+		margin: 10px 0 30px 0;
+	  }
+
+	  h2{
+		@include font-family('ProximaNova-Bold',normal, 130%);
+		margin: 20px 0;
+	  }
+
+	  p{
+		@include font-family('ProximaNova-Light',normal, 100%);
+		margin: 10px 0;
+		line-height: 1.2;
+	  }
+
+	  strong{
+		@include font-family('ProximaNova-Bold',normal, 100%);
+	  }
+	}
+}

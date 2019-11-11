@@ -1,0 +1,221 @@
+//html,
+//body {
+//  height: 100%;
+//}
+
+body{
+	&#adminPages{
+    font-size: 14px !important;
+	  .wrap {
+		min-height: 100%;
+		height: auto;
+		margin: 0 auto -60px;
+		padding: 0 0 60px;
+     // @include font-family('ProximaNova-Light', normal, 16px);
+	  }
+
+	  .wrap > .container {
+		padding: 70px 15px 20px;
+	  }
+
+	  .footer {
+		height: 60px;
+		background-color: #f5f5f5;
+		border-top: 1px solid #ddd;
+		padding-top: 20px;
+	  }
+
+	  .jumbotron {
+		text-align: center;
+		background-color: transparent;
+	  }
+
+	  .jumbotron .btn {
+		font-size: 21px;
+		padding: 14px 24px;
+	  }
+
+	  .not-set {
+		color: #c55;
+		font-style: italic;
+	  }
+
+	  /* add sorting icons to gridview sort links */
+	  a.asc:after, a.desc:after {
+		position: relative;
+		top: 1px;
+		display: inline-block;
+		font-family: 'Glyphicons Halflings';
+		font-style: normal;
+		font-weight: normal;
+		line-height: 1;
+		padding-left: 5px;
+	  }
+
+	  a.asc:after {
+		content: /*"\e113"*/ "\e151";
+	  }
+
+	  a.desc:after {
+		content: /*"\e114"*/ "\e152";
+	  }
+
+	  .sort-numerical a.asc:after {
+		content: "\e153";
+	  }
+
+	  .sort-numerical a.desc:after {
+		content: "\e154";
+	  }
+
+	  .sort-ordinal a.asc:after {
+		content: "\e155";
+	  }
+
+	  .sort-ordinal a.desc:after {
+		content: "\e156";
+	  }
+
+	  .grid-view th {
+		white-space: nowrap;
+	  }
+
+	  .hint-block {
+		display: block;
+		margin-top: 5px;
+		color: #999;
+	  }
+
+	  .error-summary {
+		color: #a94442;
+		background: #fdf7f7;
+		border-left: 3px solid #eed3d7;
+		padding: 10px 20px;
+		margin: 0 0 15px 0;
+	  }
+
+	}
+}
+.clearfix:after{
+  content: '';
+  display: table;
+  clear: both;
+}
+.chartMenuHolder{
+  background-color: #666666;
+  margin-right: 30px;
+  padding-top: 30px;
+ height: 100vh;
+}
+body#adminPages .wrap > .container {
+  padding: 70px 15px 0px !important;
+}
+/*Admin*/
+body#adminPages .report {
+  padding-bottom: 0 !important;
+}
+body#adminPages .wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -60px;
+   padding: 0 0 0px !important;
+}
+/*Admin*/
+
+.chartMenuHolder ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.chartMenuHolder ul li{
+  text-align: center;
+}
+.chartMenuHolder ul li a{
+  text-decoration: none;
+  color: #ffffff;
+  padding: 5px;
+  font-size: 18px;
+}
+body#adminPages .report .container .chartHolder {
+  display: block;
+  float: left;
+  width: 76% !important;
+}
+.chartHolder h2{
+  line-height: 0.8;
+  margin: 0 !important;
+  margin-bottom: 30px !important;
+}
+#filterBlock:after{
+  content: '';
+  display: block;
+  clear: both;
+}
+#filterBlock{
+  width: 100%;
+  margin-bottom: 80px !important;
+}
+#filterBlock button.default{
+  padding: 7px 8px;
+  display: block;
+  float: left;
+  background-color: #fff;
+  font-size: 14px !important;
+}
+
+#filterBlock button{
+  border: none !important;
+}
+
+#filterBlock button {
+    border: 1px solid #CCCCCC !important;
+}
+#filterBlock button:nth-child(1) {
+  border-right: none !important;
+}
+#filterBlock button:nth-child(2) {
+  border-right: none !important;
+}
+#filterBlock button:nth-child(3) {
+  border-right: none !important;
+}
+#filterBlock .input-group{
+  width: 32%;
+  float: left;
+  height: 35px;
+}
+
+#filterBlock select{
+  height: 36px;
+  width: 33%;
+  float: right;
+  border: 1px solid #CCCCCC !important;
+  background-color: #EEEEEE;
+}
+#filterBlock .filterBlock-btn-wrap{
+  height: 35px;
+  width: 33%;
+  float: left;
+}
+
+#filterBlock button.active{
+  background-color: #E4E4E4 !important;
+  padding: 7px 8px;
+  display: block;
+  float: left;
+  font-size: 14px !important;
+}
+.input-group .form-control {
+  height: 36px;
+  border-radius: 0;
+}
+.input-group-addon:first-child {
+  border-right: 0;
+  border-radius: 0;
+}
+.b-footer__registr{
+  display: inline-block;
+  font-size: 16px !important;
+}
+
+

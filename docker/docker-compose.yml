@@ -1,0 +1,74 @@
+version: '3.3'
+
+networks:
+  default:
+    external:
+      name: backend
+services:
+  valinta:
+    build:
+      context: .
+      dockerfile: docker/yii2.dockerfile
+    ports:
+      - 80:80
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/app:delegated
+    environment:
+      - PHP_ENABLE_XDEBUG
+      - TEST_RUNTIME_PATH=/tmp/runtime
+    links:
+      - dbvalinta
+    depends_on:
+      - dbvalinta
+      - fpm
+      - cache
+    privileged: true
+    extra_hosts:
+      - "pelikan.core:192.168.11.94"
+    networks:
+      - default
+  cache:
+    image: redis:latest
+    restart: always
+    volumes:
+      - ./api/runtime/cache:/data
+    ports:
+      - 63791:6379
+    networks:
+      - default
+  fpm:
+    build: 
+      context: .
+      dockerfile: docker/fpm.dockerfile
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/app
+    links:
+      - dbvalinta
+    networks:
+      - default
+  dbvalinta:
+    image: mysql:5.7
+    ports: 
+      - 33062:3306
+    volumes:
+      - ./docker/conf/my.cnf:/etc/mysql/conf.d/custom.cnf
+      - ./:/app
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=yii2valinta
+      - MYSQL_USER=yii2valinta
+      - MYSQL_PASSWORD=1qwe2qaz
+    networks:
+      - default
+  #pgsql:
+  #  image: postgres:9.5
+  #  environment:
+  #    - POSTGRES_DB=yii2advanced
+  #    - POSTGRES_USER=yii2advanced
+  #    - POSTGRES_PASSWORD=secret

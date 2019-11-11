@@ -1,0 +1,13 @@
+&{
+  .container{
+	padding: 10px;
+
+	p{
+	  @include font-family('ProximaNova-Light',normal, 100%);
+	  margin: 10px 0;
+	  line-height: 1.2;
+	}
+
+  }
+}
+
