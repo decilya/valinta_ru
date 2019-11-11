@@ -1,0 +1,4 @@
+SHELL=/bin/bash
+MAILTO=
+
+0 */12 * * * root php /var/www/html/via/yii2-valinta.dsite/yii app/send-email-about-new-feadback-to-customer

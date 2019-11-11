@@ -1,0 +1,4 @@
+SHELL=/bin/bash
+MAILTO=via@wizardforum.ru
+
+*/10 * * * * root php /var/www/html/via/yii2-valinta.dsite/yii app/send-mail-to-user-about-new-order
