@@ -70,7 +70,7 @@ function initOrderAdminList() {
 
         bootbox.dialog({
             title: "Укажите причину закрытия заказа №" + orderId + " и нажмите &laquo;Закрыть&raquo;!",
-            message: "<textarea id='reason'></textarea>",
+            message: "<textarea id='reason'></textarea><div id=\"errorDivBlock\"></div>",
             buttons: {
                 success: {
                     label: "Закрыть",
@@ -80,8 +80,11 @@ function initOrderAdminList() {
                         var reason = $('#reason').val();
 
                         if (reason.length < 4) {
-                            bootbox.alert("Причина закрытия не может быть выражена менее чем в 4х символах");
+                            $('#errorDivBlock').html('<p style=\"color: red\">Причина закрытия не может быть выражена менее чем в 4х символах</p>');
+
                             return false;
+                        }  else {
+                            $('#errorDivBlock').html("");
                         }
 
                         $.ajax({

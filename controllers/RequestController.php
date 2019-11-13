@@ -104,7 +104,7 @@ class RequestController extends Controller
 
         $model = ArrayHelper::toArray($query->offset($paginator->offset)
             ->limit($paginator->limit)
-            ->indexBy('id')
+          //  ->indexBy('id')
             ->orderBy('date_created DESC')
             ->all());
 

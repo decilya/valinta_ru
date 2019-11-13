@@ -48,8 +48,8 @@ class CustomerSearch extends Customer
      */
     public function search($params)
     {
-        $authTbl = false;
         $query = Customer::find()->with('customerPhones');
+        $query->innerJoin('auth', '`auth`.`customer_id` = `customer`.`id`');
 
         $this->load($params);
 
@@ -60,7 +60,7 @@ class CustomerSearch extends Customer
         if (!empty($params['id'])) {
             /** @var Auth $auth */
             $auth = Auth::find()->where(['id' => (int)$params['id']])->one();
-            $query->andFilterWhere(['id' => $auth->customer_id]);
+            $query->andFilterWhere(['auth.id' => $params['id']]);
         }
 
         if (!empty($params['text'])) {
@@ -86,8 +86,6 @@ class CustomerSearch extends Customer
 
             } else {
                 $query->orFilterWhere(['or', ['like', 'name', $text]]);
-                $query->innerJoin('auth', '`auth`.`customer_id` = `customer`.`id`');
-                $authTbl = true;
                 $query->orFilterWhere(['or', ['like', 'auth.login',  $text]]);
             }
         }
@@ -104,14 +102,8 @@ class CustomerSearch extends Customer
         if ((!isset($params['sort']) || $params['sort'] == null) || ($params['sort'] == 0)) {
             $query->orderBy([new \yii\db\Expression("FIELD(status_id, '1', '3', '2')")])->addOrderBy(['updated_at' => SORT_ASC]);
         } elseif ($params['sort'] == 1) {
-            if (!$authTbl) {
-                $query->innerJoin('auth', '`auth`.`customer_id` = `customer`.`id`');
-            }
             $query->orderBy(['auth.id' => SORT_DESC]);
         } elseif ($params['sort'] == 2) {
-            if (!$authTbl) {
-                $query->innerJoin('auth', '`auth`.`customer_id` = `customer`.`id`');
-            }
             $query->orderBy(['auth.id' => SORT_ASC]);
         } else {
             throw new Exception('Не верно задан параметр сортировки.');

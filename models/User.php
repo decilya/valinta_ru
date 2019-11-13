@@ -663,7 +663,7 @@ class User extends ActiveRecord
      */
     public static function constructAdminFiltersQuery($qp, $model = 'User')
     {
-        $authTbl = false;
+        $userMode = false;
         $arr = [
             'filterParams' => []
         ];
@@ -671,13 +671,21 @@ class User extends ActiveRecord
         $model = 'app\\models\\' . $model;
 
         $query = $model::find();
+
+        if ($model == 'User') {
+            $query->innerJoin('auth', '`auth`.`user_id` = `users`.`id`');
+            $userMode = true;
+        }
         if (!empty($qp['id'])) {
 
             if ($model == 'app\models\Request') {
                 $query->andFilterWhere(['id' => (int)$qp['id']]);
             } else {
-                $query->innerJoin('auth', '`auth`.`user_id` = `users`.`id`');
-                $authTbl= true;
+
+                if (!$userMode) {
+                    $query->innerJoin('auth', '`auth`.`user_id` = `users`.`id`');
+                }
+
                 $query->andFilterWhere(['auth.id' => (int)$qp['id']]);
             }
 
@@ -685,14 +693,12 @@ class User extends ActiveRecord
         }
 
         if (!empty($qp['text'])) {
-
             $text = (!empty($qp['text']) ? strip_tags(trim($qp['text'])) : "");
 
             if ($model == 'app\models\User') {
-                if (!$authTbl) {
+                if (!$userMode) {
                     $query->innerJoin('auth', '`auth`.`user_id` = `users`.`id`');
                 }
-                $authTbl= true;
                 $query->andFilterWhere(['or', ['like', 'fio', $text], ['like', 'auth.login', $text]]);
 
                 $phone = Phone::find()->where([
@@ -702,25 +708,37 @@ class User extends ActiveRecord
                 ])->indexBy('id')->all();
 
                 if (!empty($phone)) {
-                    $query->orFilterWhere(['in', 'id', (new Query())->select('user_id')->from('users_phones')->where(['in', 'phone_id', array_keys($phone)])]);
+                    $query->orFilterWhere(['in', 'users.id', (
+                    new Query())
+                        ->select('user_id')
+                        ->from('users_phones')
+                        ->where(['in', 'phone_id', array_keys($phone)])
+                    ]);
                 }
             } else {
-                if (!$authTbl) {
-                    $query->innerJoin('auth', '`auth`.`user_id` = `users`.`id`');
-                }
-                $authTbl= true;
-                $query->andFilterWhere(['or', ['like', 'fio', $text], ['like', 'auth.login', $text], ['like', 'phone', $text]]);
+                $query->andFilterWhere(['or', ['like', 'fio', $text], ['like', 'email', $text], ['like', 'phone', $text]]);
             }
 
             $arr['filterParams']['text'] = $text;
         }
 
         if (!empty($qp['userStatus'])) {
+
+            if (!$userMode) {
+                $query->innerJoin('auth', '`auth`.`user_id` = `users`.`id`');
+            }
+
             $query->andFilterWhere(['status_id' => (int)$qp['userStatus']]);
             $arr['filterParams']['userStatus'] = (int)$qp['userStatus'];
         }
 
         if (!empty($qp['status'])) {
+
+            if (!$userMode) {
+                $query->innerJoin('auth', '`auth`.`user_id` = `users`.`id`');
+            }
+
+
             $query->andFilterWhere(['status_value' => (int)$qp['status']]);
             if ($model == 'app\models\Request') $arr['filterParams']['status'] = (!empty($qp['status'])) ? (int)$qp['status'] : "";
         }

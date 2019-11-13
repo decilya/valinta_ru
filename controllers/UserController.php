@@ -121,7 +121,6 @@ class UserController extends Controller
             /** @var ActiveQuery $query */
             $model = $query->offset($paginator->offset)
                 ->limit($paginator->limit)
-                ->indexBy('id')
                 ->orderBy([
                     'status_id' => (
                     new Expression('FIND_IN_SET(users.status_id, "' .
@@ -134,8 +133,6 @@ class UserController extends Controller
         } elseif ($sortUser == 1) {
             $model = $query->offset($paginator->offset)
                 ->limit($paginator->limit)
-                ->indexBy('id')
-                ->innerJoin('auth', '`auth`.`user_id` = `users`.`id`')
                 ->orderBy([
                     'auth.id' => SORT_DESC
                 ])
@@ -143,10 +140,8 @@ class UserController extends Controller
         } elseif ($sortUser == 2) {
             $model = $query->offset($paginator->offset)
                 ->limit($paginator->limit)
-                ->indexBy('id')
-                ->innerJoin('auth', '`auth`.`user_id` = `users`.`id`')
                 ->orderBy([
-                    'auth.id' => SORT_DESC
+                    'auth.id' => SORT_ASC
                 ])
                 ->all();
         } else {
@@ -316,7 +311,7 @@ class UserController extends Controller
         $auth = Auth::find()->where(['id' => $id])->one();
         if (!empty($auth)) {
             /** @var User $user */
-            $user = User::find()->where(['user_id' => $auth->id])->one();
+            $user = User::find()->where(['id' => $auth->user_id])->one();
             $user->scenario = User::SCENARIO_UPDATE;
 
             $user->status_id = Yii::$app->params['status']['accepted'];
